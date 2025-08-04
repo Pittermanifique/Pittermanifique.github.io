@@ -1,0 +1,38 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #1f1e1e;
+}
+
+.titre {
+    text-align: center;
+    color: #5a1e1e;
+    font-size: 2em;
+    margin-top: 20px;
+}
+
+.projects {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    text-decoration: double;
+    width: 90%;
+}
+
+.liens {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    background-color: antiquewhite;
+}
+
+.lien{
+    text-decoration: none;
+}
