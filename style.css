@@ -2,11 +2,22 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #1f1e1e;
+    background-image: url("_MG_2697.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.bg {
+    background: rgba(30, 29, 29, 0.2); /* Couleur semi-transparente */
+    backdrop-filter: blur(10px);
+    height: 100%;
+    width: 100%;
+    position: absolute;
 }
 
 .titre {
     text-align: center;
+    text-size-adjust: 100%;
     color: #5a1e1e;
     font-size: 2em;
     margin-top: 20px;
@@ -33,6 +44,41 @@ body {
     background-color: antiquewhite;
 }
 
-.lien{
+.liengit{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
     text-decoration: none;
+    background-color: #fafafafa;
+    width: 10%;
+    height: 30px;
+    color: #333;
+}
+
+.lieninsta{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    text-decoration: none;
+    background: linear-gradient(to right, #833ab4, #f56040);
+    width: 10%;
+    height: 30px;
+    color: white;
+}
+
+
+.résaux {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 20px;
+    margin-left: 40px;
+    margin-right: 40px;
+    border-radius: 20px;
+    height: 60px;
+    background-color: #22125b;
 }
