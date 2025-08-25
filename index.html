@@ -11,21 +11,35 @@
 
 <body>
     <div class="bg">
-        <div class="titre">
-            <h1>pittermanifique|Lestage Isaac</h1>
-        </div>
+        <h1 id="titre" class="titre">pittermanifique | Lestage Isaac</h1>
         <div class="résaux">
             <a class="liengit" href="https://github.com/Pittermanifique">github</a>
             <a class="lieninsta" href="https://www.instagram.com/isaac_lstg/">instagram</a>
         </div>
         <div class="projects">
-            <p>mes projects</p>
+            <h2 class="titre">mes projects</h2>
             <div class="liens">
                 <a class="lien" href="BadDriver/BadDriver.html">BadDriver</a>
-                <a class="lien" href="BadDriver/BadDriver.html">BadDriver</a>
-                <p class="lien" href="BadDriver/BadDriver.html">BadDriver</a>
-                    <a class="lien" href="BadDriver/BadDriver.html">BadDriver</a>
+                <a class="lien" href="https://github.com/Pittermanifique/BeatDetect">BeatDetect</a>
+                <a class="lien" href="https://github.com/Pittermanifique/sudoku"> sover-sudoku</a>
             </div>
         </div>
     </div>
+<script>
+  function changerTitreSelonTaille() {
+    const titre = document.getElementById("titre");
+    if (window.innerWidth <= 750) {
+      titre.textContent = "pittermanifique";
+    } else {
+      titre.textContent = "pittermanifique | Lestage Isaac";
+    }
+  }
+
+  // Exécute au chargement
+  changerTitreSelonTaille();
+
+  // Exécute à chaque redimensionnement
+  window.addEventListener("resize", changerTitreSelonTaille);
+</script>
 </body>
+

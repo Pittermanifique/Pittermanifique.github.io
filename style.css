@@ -1,14 +1,16 @@
+/* 🌌 Style de base */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
     background-image: url("Images/bg.jpg");
     background-size: cover;
     background-attachment: fixed;
+    position: relative;
 }
 
 .bg {
-    background: rgba(30, 29, 29, 0.2); /* Couleur semi-transparente */
+    background: rgba(30, 29, 29, 0.2);
     backdrop-filter: blur(10px);
     height: 100%;
     width: 100%;
@@ -16,24 +18,31 @@ body {
 }
 
 .titre {
-    text-align: center;
-    text-size-adjust: 100%;
-    color: #5a1e1e;
-    font-size: 2em;
-    margin-top: 20px;
+  font-size: clamp(1.5rem, 6vw, 3rem); /* min: 1.5rem, idéal: 6vw, max: 3rem */
+  text-align: center;
+  color: #750e1f;
+  margin: 30px auto;
+  padding: 0 15px;
+  max-width: 90%;
+  box-sizing: border-box;
 }
+
+
 
 .projects {
-    margin: auto;
+    margin: 10px auto;
     display: flex;
     flex-direction: column;
+    justify-content: center; /* Centrage vertical */
+    align-items: center;     /* Centrage horizontal */
     text-align: center;
-    align-items: center;
-    text-decoration: double;
-    width: 90%;
+    width: 90%;     /* Hauteur minimum = hauteur écran */
+    box-sizing: border-box;
 }
 
+
 .liens {
+    background-color: rgba(43, 40, 40, 0.452);
     display: flex;
     width: 100%;
     align-items: center;
@@ -41,33 +50,49 @@ body {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
-    background-color: antiquewhite;
+    border-radius: 20px;
+    padding: 20px;
+    box-sizing: border-box;
 }
 
-.liengit{
+.lien {
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 15px;
     text-decoration: none;
-    background-color: #fafafafa;
-    width: 10%;
-    height: 30px;
-    color: #333;
+    background-color: #22125b;
+    width: 300px;
+    height: 60px;
+    color: antiquewhite;
+    margin: 10px;
 }
 
-.lieninsta{
+.liengit {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    text-decoration: none;
+    background-color: #333;
+    width: 100px;
+    height: 30px;
+    color: #fafafafa;
+    margin: 5px;
+}
+
+.lieninsta {
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 15px;
     text-decoration: none;
     background: linear-gradient(to right, #833ab4, #f56040);
-    width: 10%;
+    width: 100px;
     height: 30px;
     color: white;
+    margin: 5px;
 }
-
 
 .résaux {
     display: flex;
@@ -80,5 +105,36 @@ body {
     margin-right: 40px;
     border-radius: 20px;
     height: 60px;
-    background-color: #22125b;
+    background-color: rgba(43, 40, 40, 0.452);
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+/* 📱 Responsive Design */
+@media screen and (max-width: 760px) {
+    .titre {
+        font-size: 2em;
+    }
+
+    .projects {
+        width: 90%;
+    }
+
+    .liens {
+        align-items: center;
+        padding: 10px;
+    }
+
+    .liengit,
+    .lieninsta {
+        width: 80%;
+        max-width: 100px;
+        height: 30px;
+        font-size: 0.9em;
+    }
+
+    .résaux {
+        height: auto;
+        gap: 10px;
+    }
 }
