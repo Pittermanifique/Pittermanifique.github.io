@@ -1,0 +1,30 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: gray;
+    position: relative;
+}
+
+.titre {
+    font-size: clamp(1.5rem, 6vw, 3rem); /* min: 1.5rem, idéal: 6vw, max: 3rem */
+    text-align: center;
+    color: #750e1f;
+    margin: 30px auto;
+    padding: 0 15px;
+    max-width: 90%;
+    box-sizing: border-box;
+}
+
+.gallery {
+    margin: auto;
+    width: 90%;
+    column-count: 3;
+    column-gap: 15px;
+}
+
+.gallery img {
+    width: 100%;
+    margin-bottom: 15px;
+    border-radius: 8px;
+}

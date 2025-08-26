@@ -27,9 +27,20 @@ body {
   box-sizing: border-box;
 }
 
+.galerie {
+    display: flex;
+    margin: auto;
+    margin-bottom: 25px;
+    justify-content: center;
+    align-items: center;  
+    width: 30%;
+    text-decoration: none;
+    font-size: 100px;
+}
 
 
 .projects {
+    background-color: rgba(43, 40, 40, 0.452);
     margin: 10px auto;
     display: flex;
     flex-direction: column;
@@ -38,11 +49,11 @@ body {
     text-align: center;
     width: 90%;     /* Hauteur minimum = hauteur écran */
     box-sizing: border-box;
+    border-radius: 20px;
 }
 
 
 .liens {
-    background-color: rgba(43, 40, 40, 0.452);
     display: flex;
     width: 100%;
     align-items: center;
@@ -50,7 +61,6 @@ body {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
-    border-radius: 20px;
     padding: 20px;
     box-sizing: border-box;
 }
@@ -118,6 +128,10 @@ body {
 
     .projects {
         width: 90%;
+    }
+
+    .galerie {
+        font-size: 80px;
     }
 
     .liens {
