@@ -29,7 +29,7 @@ body {
     border-radius: 8px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 760px) {
   .gallery {
     column-count: 2;
   }
