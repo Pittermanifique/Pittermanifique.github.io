@@ -15,6 +15,7 @@
         <div class="résaux">
             <a class="liengit" href="https://github.com/Pittermanifique">github</a>
             <a class="lieninsta" href="https://www.instagram.com/isaac_lstg/">instagram</a>
+            <a  class="lienchesscom"id="elo-link" href="https://www.chess.com/member/pittermanifique">Chargement...</a>
         </div>
         <div class="projects">
             <h2 class="titre">mes projects</h2>
@@ -36,6 +37,26 @@
         </div>
     </div>
 <script>
+
+  const username = 'pittermanifique';
+  const apiUrl = `https://api.chess.com/pub/player/${username}/stats`;
+
+  fetch(apiUrl)
+    .then(response => {
+      if (!response.ok) throw new Error('Erreur API');
+      return response.json();
+    })
+    .then(data => {
+      // Choisis le type d’ELO que tu veux afficher : blitz, rapid, bullet
+      const elo = data.chess_rapid.last.rating;
+      const link = document.getElementById('elo-link');
+      link.textContent = `ELO RAPID: ${elo}`;
+    })
+    .catch(error => {
+      console.error('Erreur lors de la récupération de l’ELO :', error);
+      document.getElementById('elo-link').textContent = 'Impossible de charger l’ELO';
+    });
+
   function changerTitreSelonTaille() {
     const titre = document.getElementById("titre");
     if (window.innerWidth <= 750) {

@@ -91,6 +91,19 @@ body {
     margin: 5px;
 }
 
+.lienchesscom {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    text-decoration: none;
+    background-color: #69923E;
+    width: 130px;
+    height: 30px;
+    color: #000000;
+    margin: 5px;
+}
+
 .lieninsta {
     display: flex;
     align-items: center;
