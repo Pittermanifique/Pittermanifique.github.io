@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Connexion à Spotify</title>
+</head>
+<body>
+  <h1>Connecte-toi à Spotify</h1>
+  <button onclick="loginWithSpotify()">Se connecter</button>
+
+  <script>
+    const clientId = "b6cdc02492a84d34b9f75cadcca4f498";
+    const redirectUri = "https://Pittermanifique.github.io/callback";
+    const scopes = [
+      "user-read-private",
+      "user-read-email",
+      "playlist-read-private"
+    ];
+
+    function loginWithSpotify() {
+      const authUrl = "https://accounts.spotify.com/authorize" +
+        "?response_type=token" +
+        "&client_id=" + encodeURIComponent(clientId) +
+        "&scope=" + encodeURIComponent(scopes.join(" ")) +
+        "&redirect_uri=" + encodeURIComponent(redirectUri);
+
+      window.location.href = authUrl;
+    }
+  </script>
+</body>
+</html>
