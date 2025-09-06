@@ -35,4 +35,25 @@
 
       window.onSpotifyWebPlaybackSDKReady = () => {
         const player = new Spotify.Player({
-          name: 'Lecteur
+          name: 'Lecteur Web',
+          getOAuthToken: cb => { cb(token); },
+          volume: 0.5
+        });
+
+        // Événements
+        player.addListener('ready', ({ device_id }) => {
+          console.log('Prêt avec Device ID', device_id);
+          document.getElementById("status").innerText = "🎶 Lecteur prêt !";
+        });
+
+        player.addListener('not_ready', ({ device_id }) => {
+          console.log('Device ID est hors ligne', device_id);
+        });
+
+        // Connexion
+        player.connect();
+      };
+    }
+  </script>
+</body>
+</html>
