@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Mini Lecteur Spotify</title>
+  <script src="https://sdk.scdn.co/spotify-player.js"></script>
+</head>
+<body>
+  <h1>🎵 Mon lecteur Spotify</h1>
+  <button id="connect">Se connecter à Spotify</button>
+  <div id="status"></div>
+
+  <script>
+    // ⚠️ Mets ton vrai client_id
+    const client_id = "b6cdc02492a84d34b9f75cadcca4f498";
+    const redirect_uri = "https://pittermanifique.github.io/callback.html";
+    const scopes = "streaming user-read-email user-read-private";
+
+    // Bouton connexion
+    document.getElementById("connect").onclick = () => {
+      const url = `https://accounts.spotify.com/authorize?client_id=${client_id}&response_type=token&redirect_uri=${encodeURIComponent(redirect_uri)}&scope=${encodeURIComponent(scopes)}`;
+      window.location = url;
+    };
+
+    // Essaie de lire token depuis localStorage
+    let token = null;
+    const storedHash = localStorage.getItem("spotify_token");
+    if (storedHash) {
+      // récupère access_token dans la chaîne sauvegardée
+      token = storedHash.split("&")[0].split("=")[1];
+    }
+
+    if (token) {
+      document.getElementById("status").innerText = "✅ Connecté à Spotify";
+
+      window.onSpotifyWebPlaybackSDKReady = () => {
+        const player = new Spotify.Player({
+          name: 'Lecteur

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Callback Spotify</title>
+</head>
+<body>
+  <p>Connexion en cours...</p>
+  <script>
+    // Si on revient de Spotify avec un hash (#access_token=....)
+    if (window.location.hash) {
+      // Sauvegarde le token entier
+      localStorage.setItem("spotify_token", window.location.hash);
+      // Retour vers la page principale
+      window.location.href = "https://pittermanifique.github.io/index.html";
+    } else {
+      document.body.innerHTML = "<p>❌ Aucun token reçu.</p>";
+    }
+  </script>
+</body>
+</html>
