@@ -67,15 +67,27 @@ body {
 
 .lien {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     border-radius: 15px;
     text-decoration: none;
     background-color: #22125b;
     width: 300px;
-    height: 60px;
+    min-height: 100px;
     color: antiquewhite;
     margin: 10px;
+}
+
+.lien a {
+    font-size: 1.5em;
+    text-decoration: none;
+    color: blanchedalmond;
+}
+.lien p {
+    font-size: 1em;
+    margin: 10px;
+    text-align: center;
 }
 
 .blague {
@@ -87,6 +99,19 @@ body {
     color: antiquewhite;
     margin: 0 70px 20px 70px;
 }
+
+.egg {
+    color: antiquewhite;
+    background-color: #22125b;
+    margin-top: 10px;
+
+    /* Ajouts utiles pour un input */
+    padding: 8px 12px;
+    border: 2px solid antiquewhite;
+    border-radius: 6px;
+    font-size: 16px;
+}
+
 
 .blague p {
     font-size: 1.5em;

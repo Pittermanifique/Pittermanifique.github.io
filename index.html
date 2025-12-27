@@ -15,38 +15,55 @@
         <div class="résaux">
             <a class="liengit" href="https://github.com/Pittermanifique">github</a>
             <a class="lieninsta" href="https://www.instagram.com/isaac_lstg/">instagram</a>
-            <a  class="lienchesscom"id="elo-link" href="https://www.chess.com/member/pittermanifique">Chargement...</a>
+            <a class="lienchesscom" id="elo-link" href="https://www.chess.com/member/pittermanifique">Chargement...</a>
         </div>
         <div>
-            <h4 class="titre">Petite Blague</h4>
+            <h4 class="titre">Petite blague</h4>
             <div class="blague">
-              <p id="blague"></p>
-              <p id="reponce"></p>
+                <p id="blague"></p>
+                <p id="reponse"></p>
             </div>
         </div>
         <div class="projects">
             <h2 class="titre">Mes projets</h2>
             <div class="liens">
-                <a class="lien" href="BadDriver/BadDriver.html">BadDriver</a>
-                <a class="lien" href="https://github.com/Pittermanifique/BeatDetect">BeatDetect</a>
-                <a class="lien" href="https://github.com/Pittermanifique/sudoku"> sover-sudoku</a>
-                <a class="lien" href="https://github.com/Pittermanifique/lego_brick_estimation"> lego_brick_estimation</a>
+                <div class="lien">
+                    <a href="BadDriver/BadDriver.html">BadDriver</a>
+                    <p>une API et une page web qui ont pour objectif de répertorier les mauvais conducteurs avec leurs plaques</p>
+                </div>
+                <div class="lien">
+                    <a href="https://github.com/Pittermanifique/BeatDetect">BeatDetect</a>
+                    <p>un programme qui détecte les battements d'une musique dans le but de contrôler des lumières par un port série</p>
+                </div>
+                <div class="lien">
+                    <a href="https://github.com/Pittermanifique/sudoku">solver-sudoku</a>
+                    <p>un programme qui résout les sudokus</p>
+                </div>
+                <div class="lien">
+                    <a href="https://github.com/Pittermanifique/ASCII_Convert">ASCII_Convert</a>
+                    <p>un programme qui convertit des images et vidéos en ASCII art avec pour objectif futur d'ajouter de l'IA pour améliorer la conversion</p>
+                </div>
+                <div class="lien">
+                    <a href="https://github.com/Pittermanifique/lego_brick_estimation">lego_brick_estimation</a>
+                    <p>un programme que j'ai créé afin de répondre à la question "quelle est la brique la plus fabriquée par LEGO"</p>
+                </div>
             </div>
         </div>
         <div class="projects">
-          <h2 class="titre">Ma galerie</h2>
-          <a class="galerie" href="galerie/galerie.html">📸</a>
-        </div> 
+            <h2 class="titre">Ma galerie</h2>
+            <a class="galerie" href="galerie/galerie.html">📸</a>
+        </div>
         <div class="projects">
             <h3 class="titre">Mes jeux</h3>
             <div class="liens">
-                <a class="lien" href="games/index.html">space-shouter</a>
+                <a class="lien" href="games/index.html">space-shooter</a>
             </div>
         </div>
         <div class="liens">
-          <input type="password" id="pwd">
+            <input type="password" id="pwd" class="egg" placeholder="egg">
         </div>
     </div>
+
 <script>
 
   const username = 'pittermanifique';
@@ -60,24 +77,23 @@
       return response.json();
     })
     .then(data => {
-      // Choisis le type d’ELO que tu veux afficher : blitz, rapid, bullet
       const elo = data.chess_rapid.last.rating;
       const link = document.getElementById('elo-link');
-      link.textContent = `ELO RAPID: ${elo}`;
+      link.textContent = `ELO RAPID : ${elo}`;
     })
     .catch(error => {
       console.error('Erreur lors de la récupération de l’ELO :', error);
       document.getElementById('elo-link').textContent = 'Impossible de charger l’ELO';
     });
-  
+
   fetch(apiblagueUrl)
     .then(response => {
-      if (!response.ok) throw new Error('Erreur API Blague');
+      if (!response.ok) throw new Error('Erreur API blague');
       return response.json();
     })
     .then(blague => {
       document.getElementById('blague').textContent = blague.setup;
-      document.getElementById('reponce').textContent = blague.delivery;
+      document.getElementById('reponse').textContent = blague.delivery;
     })
     .catch(error => {
       console.error('Erreur lors de la récupération de la blague :', error);
@@ -88,17 +104,15 @@
 
   input.addEventListener("keydown", function(event) {
       if (event.key === "Enter") {
-          const mdp = input.value; // lire le mot de passe
+          const mdp = input.value;
 
-          // Exemple : vérifier un mot de passe simple
           if (mdp === "bite") {
-              window.location.href = "formyfriends.html"; // redirection
+              window.location.href = "formyfriends.html";
           } else {
               alert("Mot de passe incorrect");
           }
       }
   });
-
 
   function changerTitreSelonTaille() {
     const titre = document.getElementById("titre");
@@ -109,11 +123,10 @@
     }
   }
 
-  // Exécute au chargement
   changerTitreSelonTaille();
 
-  // Exécute à chaque redimensionnement
   window.addEventListener("resize", changerTitreSelonTaille);
+
 </script>
 </body>
-
+</html>
