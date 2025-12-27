@@ -17,6 +17,13 @@
             <a class="lieninsta" href="https://www.instagram.com/isaac_lstg/">instagram</a>
             <a  class="lienchesscom"id="elo-link" href="https://www.chess.com/member/pittermanifique">Chargement...</a>
         </div>
+        <div>
+            <h4 class="titre">Petite Blague</h4>
+            <div class="blague">
+              <p id="blague"></p>
+              <p id="reponce"></p>
+            </div>
+        </div>
         <div class="projects">
             <h2 class="titre">Mes projets</h2>
             <div class="liens">
@@ -42,6 +49,8 @@
   const username = 'pittermanifique';
   const apiUrl = `https://api.chess.com/pub/player/${username}/stats`;
 
+  const apiblagueUrl = 'https://v2.jokeapi.dev/joke/Any?lang=fr&type=twopart';
+
   fetch(apiUrl)
     .then(response => {
       if (!response.ok) throw new Error('Erreur API');
@@ -56,6 +65,20 @@
     .catch(error => {
       console.error('Erreur lors de la récupération de l’ELO :', error);
       document.getElementById('elo-link').textContent = 'Impossible de charger l’ELO';
+    });
+  
+  fetch(apiblagueUrl)
+    .then(response => {
+      if (!response.ok) throw new Error('Erreur API Blague');
+      return response.json();
+    })
+    .then(blague => {
+      document.getElementById('blague').textContent = blague.setup;
+      document.getElementById('reponce').textContent = blague.delivery;
+    })
+    .catch(error => {
+      console.error('Erreur lors de la récupération de la blague :', error);
+      document.getElementById('blague').textContent = 'Impossible de charger une blague pour le moment.';
     });
 
   function changerTitreSelonTaille() {

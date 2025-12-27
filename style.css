@@ -78,6 +78,22 @@ body {
     margin: 10px;
 }
 
+.blague {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 15px;
+    background-color: #22125b;
+    color: antiquewhite;
+    margin: 0 70px 20px 70px;
+}
+
+.blague p {
+    font-size: 1.5em;
+    margin: 10px;
+    text-align: center;
+}
+
 .liengit {
     display: flex;
     align-items: center;
