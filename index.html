@@ -43,6 +43,9 @@
                 <a class="lien" href="games/index.html">space-shouter</a>
             </div>
         </div>
+        <div class="liens">
+          <input type="password" id="pwd">
+        </div>
     </div>
 <script>
 
@@ -80,6 +83,22 @@
       console.error('Erreur lors de la récupération de la blague :', error);
       document.getElementById('blague').textContent = 'Impossible de charger une blague pour le moment.';
     });
+
+  const input = document.getElementById("pwd");
+
+  input.addEventListener("keydown", function(event) {
+      if (event.key === "Enter") {
+          const mdp = input.value; // lire le mot de passe
+
+          // Exemple : vérifier un mot de passe simple
+          if (mdp === "bite") {
+              window.location.href = "formyfriends.html"; // redirection
+          } else {
+              alert("Mot de passe incorrect");
+          }
+      }
+  });
+
 
   function changerTitreSelonTaille() {
     const titre = document.getElementById("titre");
